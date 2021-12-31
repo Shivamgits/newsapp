@@ -9,24 +9,8 @@ const App =() => {
   const pageSize = 6;
   const apiKey = process.env.REACT_APP_NEWS_API;
 
-
-
-  // state={
-  //   progress:0,
-  //   color:"primary"
-  // }
-
   const[progress,setProgress] = useState(0)
   const[color,setColor] = useState("primary")
-
-  // setProgress =(progress) => {
-  //   setState({progress:progress})
-  // }
-  // setColor =(color) => {
-  //   setState({color:color})
-  // }
-  
-  
     return (
       <>
       <Navbar key="general"  setColor={setColor} backgroundColor={color} />

@@ -3,10 +3,6 @@ import {Link} from 'react-router-dom';
 import PropTypes from "prop-types";
 
 const Navbar = (props) => {
-
-  
-   
-   
     return (
       <div>
         <nav className={`navbar fixed-top navbar-expand-lg navbar-dark bg-${props.backgroundColor}`} >
