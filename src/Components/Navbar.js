@@ -1,21 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 import {Link} from 'react-router-dom';
 import PropTypes from "prop-types";
 
-export class Navbar extends Component {
+const Navbar = (props) => {
 
-  static defaultProps = {
-    backgroundColor: "primary"
-  };
-  static propTypes = {
-    backgroundColor: PropTypes.string
-  };
-  render() {
+  
    
    
     return (
       <div>
-        <nav className={`navbar navbar-expand-lg navbar-dark bg-${this.props.backgroundColor}`} >
+        <nav className={`navbar fixed-top navbar-expand-lg navbar-dark bg-${props.backgroundColor}`} >
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               NewsMonkey
@@ -37,43 +31,43 @@ export class Navbar extends Component {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-link " onClick={()=>{this.props.setcolor("success")}}aria-current="page" to="/">
+                  <Link className="nav-link " onClick={()=>{props.setColor("success")}}aria-current="page" to="/">
                     Home
                   </Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link className="nav-link" onClick={()=>{this.props.setcolor("warning")}}to="/business">
+                  <Link className="nav-link" onClick={()=>{props.setColor("warning")}}to="/business">
                     Business
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link"onClick={()=>{this.props.setcolor("primary")}} to="/entertainment">
+                  <Link className="nav-link"onClick={()=>{props.setColor("primary")}} to="/entertainment">
                     Entertainment
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link"onClick={()=>{this.props.setcolor("danger")}} to="/general">
+                  <Link className="nav-link"onClick={()=>{props.setColor("danger")}} to="/general">
                     General
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link"onClick={()=>{this.props.setcolor("info")}} to="/health">
+                  <Link className="nav-link"onClick={()=>{props.setColor("info")}} to="/health">
                     Health
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link"onClick={()=>{this.props.setcolor("dark")}} to="/science">
+                  <Link className="nav-link"onClick={()=>{props.setColor("dark")}} to="/science">
                     Science
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link"onClick={()=>{this.props.setcolor("secondary")}} to="/sports">
+                  <Link className="nav-link"onClick={()=>{props.setColor("secondary")}} to="/sports">
                     Sports
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link"onClick={()=>{this.props.setcolor("primary")}} to="/technology">
+                  <Link className="nav-link"onClick={()=>{props.setColor("primary")}} to="/technology">
                     Technology
                   </Link>
                 </li>
@@ -83,7 +77,14 @@ export class Navbar extends Component {
         </nav>
       </div>
     );
-  }
+  
 }
+Navbar.defaultProps = {
+  backgroundColor: "primary"
+};
+Navbar.propTypes = {
+  backgroundColor: PropTypes.string
+};
+
 
 export default Navbar;
